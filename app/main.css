@@ -1,0 +1,16 @@
+.title {
+    text-align: center;
+    margin-top: 40px;
+}
+.subtitle {
+    text-align: center;
+}
+.form {
+    max-width: 600px;
+    width: 100%;
+    margin: 20px auto 0 auto;
+}
+.form h4 {
+    text-align: center;
+    margin-bottom: 30px;
+}

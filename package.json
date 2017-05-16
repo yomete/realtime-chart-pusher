@@ -1,0 +1,19 @@
+{
+  "name": "vue-realtime-chart",
+  "version": "1.0.0",
+  "description": "Vue app demonstrating Pusher's functionality",
+  "main": "server.js",
+  "scripts": {
+    "run": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "nodemon": "^1.11.0",
+    "pusher": "^1.5.1",
+    "pusher-js": "^4.1.0",
+    "vue": "^2.3.3"
+  }
+}
