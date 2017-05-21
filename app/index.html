@@ -112,8 +112,7 @@
             },
             mounted () {
                 this.fillData()
-                this.fetchData()
-                //console.log(this.fillData)
+//                this.fetchData()
 //                setTimeout(() => {
 //                    this.fillData()// |this| properly refers to the person object
 //                }, 1000);
@@ -121,7 +120,7 @@
             methods: {
                 fillData: function() {
                     let self = this
-                    axios.get('http://localhost:3000/finances')
+                    axios.get('https://realtime-chart-pusher.herokuapp.com/finances')
                         .then(function(response) {
                             let _results = response.data.data
 
@@ -157,7 +156,7 @@
                     let _income = self.incomeamount
                     let _today = moment().format('MMMM Do YYYY')
 
-                    axios.post('http://localhost:3000/addexpense', {
+                    axios.post('https://realtime-chart-pusher.herokuapp.com/addexpense', {
                         expense: _expense,
                         income: _income,
                         date: _today
@@ -195,6 +194,7 @@
                         })
                 },
                 fetchData: function () {
+                    let self = this
                     channel.bind('new-expense', function(data) {
                         let _results = data.newExpense.data
                         let dateresult = _results.map(a => a.date);
