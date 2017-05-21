@@ -112,10 +112,11 @@
             },
             mounted () {
                 this.fillData()
+                this.fetchData()
                 //console.log(this.fillData)
-//                setInterval(() => {
+//                setTimeout(() => {
 //                    this.fillData()// |this| properly refers to the person object
-//                }, 4000);
+//                }, 1000);
             },
             methods: {
                 fillData: function() {
@@ -175,7 +176,6 @@
                                 self.income = incomeresult
                                 self.date = dateresult
 
-
                                 self.datacollection = {
                                     labels: self.date,
                                     datasets: [
@@ -204,7 +204,6 @@
                         self.expense = expenseresult
                         self.income = incomeresult
                         self.date = dateresult
-
 
                         self.datacollection = {
                             labels: self.date,
