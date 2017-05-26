@@ -53,12 +53,11 @@ let expensesList = {
     ]
 }
 
-
 app.get('/', (req,res) => {
     res.sendFile('index.html', {root: __dirname + '/app'});
 });
 
-app.get('/finances', function(req,res){
+app.get('/finances', (req,res) => {
     res.send(expensesList);
 });
 
@@ -89,26 +88,6 @@ app.post('/addexpense', (req, res) => {
         'date': date,
         data: expensesList
     })
-});
-
-app.post('/send', (req, res) => {
-
-    let amount = req.body.amount;
-    amount = Number(amount)
-    let date = req.body.date;
-
-    let newExpense  = {
-        date: date,
-        amount: amount
-    };
-
-    expensesList.data.push(newExpense);
-
-    res.send({
-        success : true,
-        data: expensesList
-    })
-
 });
 
 app.listen(app.get('port'), function() {

@@ -85,7 +85,7 @@
                         },
                         responsive: true,
                         maintainAspectRatio: false,
-                        height: 300
+                        height: 200
                     }
                 }
             },
@@ -112,16 +112,12 @@
             },
             mounted () {
                 this.fillData()
-//                this.fetchData()
-//                setTimeout(() => {
-//                    this.fillData()// |this| properly refers to the person object
-//                }, 1000);
             },
             methods: {
                 fillData: function() {
                     let self = this
                     axios.get('https://realtime-chart-pusher.herokuapp.com/finances')
-                        .then(function(response) {
+                        .then(response => {
                             let _results = response.data.data
 
                             let dateresult = _results.map(a => a.date);
@@ -155,7 +151,6 @@
                     let _expense = self.expenseamount
                     let _income = self.incomeamount
                     let _today = moment().format('MMMM Do YYYY')
-
                     axios.post('https://realtime-chart-pusher.herokuapp.com/addexpense', {
                         expense: _expense,
                         income: _income,
