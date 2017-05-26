@@ -116,13 +116,13 @@
             methods: {
                 fillData: function() {
                     let self = this
-                    axios.get('https://realtime-chart-pusher.herokuapp.com/finances')
+                    axios.get('/finances')
                         .then(response => {
-                            let _results = response.data.data
+                            let results = response.data.data
 
-                            let dateresult = _results.map(a => a.date);
-                            let expenseresult = _results.map(a => a.expense);
-                            let incomeresult = _results.map(a => a.income);
+                            let dateresult = results.map(a => a.date);
+                            let expenseresult = results.map(a => a.expense);
+                            let incomeresult = results.map(a => a.income);
 
                             self.expense = expenseresult
                             self.income = incomeresult
@@ -148,23 +148,23 @@
                 },
                 addExpenses: function () {
                     let self = this
-                    let _expense = self.expenseamount
-                    let _income = self.incomeamount
-                    let _today = moment().format('MMMM Do YYYY')
-                    axios.post('https://realtime-chart-pusher.herokuapp.com/addexpense', {
-                        expense: _expense,
-                        income: _income,
-                        date: _today
+                    let expense = self.expenseamount
+                    let income = self.incomeamount
+                    let today = moment().format('MMMM Do YYYY')
+                    axios.post('/expense/add', {
+                        expense: expense,
+                        income: income,
+                        date: today
                     })
                         .then(response => {
                             self.expenseamount = ''
                             self.incomeamount = ''
                             channel.bind('new-expense', function(data) {
-                                let _results = data.newExpense.data
+                                let results = data.newExpense.data
 
-                                let dateresult = _results.map(a => a.date);
-                                let expenseresult = _results.map(a => a.expense);
-                                let incomeresult = _results.map(a => a.income);
+                                let dateresult = results.map(a => a.date);
+                                let expenseresult = results.map(a => a.expense);
+                                let incomeresult = results.map(a => a.income);
 
                                 self.expense = expenseresult
                                 self.income = incomeresult
@@ -191,10 +191,10 @@
                 fetchData: function () {
                     let self = this
                     channel.bind('new-expense', function(data) {
-                        let _results = data.newExpense.data
-                        let dateresult = _results.map(a => a.date);
-                        let expenseresult = _results.map(a => a.expense);
-                        let incomeresult = _results.map(a => a.income);
+                        let results = data.newExpense.data
+                        let dateresult = results.map(a => a.date);
+                        let expenseresult = results.map(a => a.expense);
+                        let incomeresult = results.map(a => a.income);
 
                         self.expense = expenseresult
                         self.income = incomeresult

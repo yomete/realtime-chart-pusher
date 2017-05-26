@@ -61,7 +61,7 @@ app.get('/finances', (req,res) => {
     res.send(expensesList);
 });
 
-app.post('/addexpense', (req, res) => {
+app.post('/expense/add', (req, res) => {
     let expense = req.body.expense;
     expense = Number(expense)
 
@@ -83,9 +83,9 @@ app.post('/addexpense', (req, res) => {
 
     res.send({
         success : true,
-        'income': income,
-        'expense': expense,
-        'date': date,
+        income: income,
+        expense: expense,
+        date: date,
         data: expensesList
     })
 });
