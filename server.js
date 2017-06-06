@@ -53,20 +53,13 @@ let expensesList = {
     ]
 }
 
-app.get('/', (req,res) => {
-    res.sendFile('index.html', {root: __dirname + '/app'});
-});
-
 app.get('/finances', (req,res) => {
     res.send(expensesList);
 });
 
 app.post('/expense/add', (req, res) => {
-    let expense = req.body.expense;
-    expense = Number(expense)
-
-    let income = req.body.income;
-    income = Number(income)
+    let expense = Number(req.body.expense)
+    let income = Number(req.body.income)
     let date = req.body.date;
 
     let newExpense  = {
