@@ -2,20 +2,9 @@
 
 > Demo of a realtime dashboard chart with Vue and Pusher
 
-## Build Setup
+## How to run this app
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+1. Clone the repo - `https://github.com/yomete/realtime-chart-pusher`
+2. Open `src/components/Home.vue` and `server.js` and edit with your Pusher credentials which can be gotten [here](pusher.com)
+3. In the root of the project folder, run `npm i` to install all dependencies.
+4. Run `npm run dev` to run the app.

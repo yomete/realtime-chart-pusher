@@ -34,7 +34,7 @@
   import Pusher from 'pusher-js'
   import LineChart from '@/components/LineChart'
 
-  const socket = new Pusher('3e6b0e8f2442b34330b7', {
+  const socket = new Pusher('APP_KEY', {
     cluster: 'eu',
     encrypted: true
   })
