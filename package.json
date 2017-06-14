@@ -5,7 +5,7 @@
   "author": "yomete <iamlese@yahoo.com>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
+    "dev": "nodemon server.js & node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
