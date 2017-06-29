@@ -2,6 +2,9 @@
 
 > Demo of a realtime dashboard chart with Vue and Pusher
 
+Follow the tutorial at https://blog.pusher.com/build-realtime-chart-with-vuejs-pusher/
+
+
 ## How to run this app
 
 1. Clone the repo - `https://github.com/yomete/realtime-chart-pusher`
